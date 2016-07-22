@@ -1,7 +1,21 @@
+<h1>Регистрация</h1>
+
 <?php
-/**
- * Created by PhpStorm.
- * User: Home
- * Date: 22.07.2016
- * Time: 22:37
- */
+use \yii\widgets\ActiveForm;
+?>
+
+<?php
+   $form = ActiveForm::begin(['options'=>['class'=>'form-horizontal']]);
+?>
+
+<?php echo $form->field($model, 'email')->textInput(['autofocus'=>true]); ?>
+
+<?php echo $form->field($model, 'password')->passwordInput(); ?>
+
+<div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+<?php
+   ActiveForm::end();
+?>
