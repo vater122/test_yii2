@@ -13,9 +13,9 @@ class Signup extends Model
         return [
             [['email', 'password'], 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass'=>'app\models\User'],//òîëüêî óíèêàëüíûé email. Èñïîëüçóåòñÿ ÒÀ ìîäåëü, êîòîðàÿ
-            ['password', 'string', 'min'=>2, 'max'=>10]       //ñîäåðæèò òàáëèöó, ê êîòîðîé íóæíî ïðèìåíèòü ïðàâèëî. Ìîäåëü
-        ];                                         //User è òàáëèöà user ñîåäèíÿþòñÿ àâòîìàòîì, ò.ê. èìåþò èäåíòè÷íûå èìåíà
+            ['email', 'unique', 'targetClass'=>'app\models\User'],//Ñ‚Ð¾Ð»ÑŒÐºÐ¾ ÑƒÐ½Ð¸ÐºÐ°Ð»ÑŒÐ½Ñ‹Ð¹ email. Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ÑÑ Ð¢Ð Ð¼Ð¾Ð´ÐµÐ»ÑŒ, ÐºÐ¾Ñ‚Ð¾Ñ€Ð°Ñ
+            ['password', 'string', 'min'=>2, 'max'=>10]       //ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ, Ðº ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¹ Ð½ÑƒÐ¶Ð½Ð¾ Ð¿Ñ€Ð¸Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð¾. ÐœÐ¾Ð´ÐµÐ»ÑŒ
+        ];                                         //User Ð¸ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ð° user ÑÐ¾ÐµÐ´Ð¸Ð½ÑÑŽÑ‚ÑÑ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¾Ð¼, Ñ‚.Ðº. Ð¸Ð¼ÐµÑŽÑ‚ Ð¸Ð´ÐµÐ½Ñ‚Ð¸Ñ‡Ð½Ñ‹Ðµ Ð¸Ð¼ÐµÐ½Ð°
     }
 
     public function signup()
@@ -24,7 +24,7 @@ class Signup extends Model
         $user->email = $this->email;
         $user->setPassword($this->password);
 
-        return $user->save(); //âîçâðàùàåò false/true
+        return $user->save(); //Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ false/true
     }
 
 }
